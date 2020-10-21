@@ -7,6 +7,12 @@ questions.forEach(function (question) {
 	// console.log(question);
 	const btn = question.querySelector(".question-btn");
 	btn.addEventListener("click", function () {
+		questions.forEach(function (item) {
+			// if article doesn't match question that is being referred, remove the class
+			if (item !== question) { 
+				item.classList.remove("show-text");
+			}
+		})
 		question.classList.toggle("show-text")
 	})
 })
